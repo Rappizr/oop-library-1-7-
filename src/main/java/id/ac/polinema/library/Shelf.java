@@ -15,6 +15,10 @@ public class Shelf {
         this("A1");
     }
 
+    public  String getCode(){
+        return code;
+    }
+    
     public int getBookCount(){
         return bookCount;
     }
