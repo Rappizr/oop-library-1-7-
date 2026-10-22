@@ -94,6 +94,10 @@ public class Book {
         // throw new UnsupportedOperationException("Not implemented yet");
     }
 
+    public Author getAuthor(){
+        return author;
+    }
+
     public void setAuthor(Author author){
         this.author = author;
     }
