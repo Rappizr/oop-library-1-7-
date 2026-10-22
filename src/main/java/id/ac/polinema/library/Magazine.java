@@ -5,7 +5,7 @@ public class Magazine extends LibraryItem {
 
     public Magazine(String title, int year, int issueNumber) {
         super(title, year);
-        this.issueNumber = issueNumber;
+        setIssueNumber(issueNumber);
     }
 
     public Magazine(String title, int year) {
@@ -17,6 +17,9 @@ public class Magazine extends LibraryItem {
     }
 
     public void setIssueNumber(int issueNumber) {
+        if (issueNumber <= 0) {
+            throw new IllegalArgumentException("Nomor edisi harus lebih dari 0");
+        }
         this.issueNumber = issueNumber;
     }
 }

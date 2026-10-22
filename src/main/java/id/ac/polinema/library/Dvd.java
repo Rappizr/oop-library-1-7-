@@ -5,7 +5,7 @@ public class Dvd extends LibraryItem {
 
     public Dvd(String title, int year, int duration) {
         super(title, year);
-        this.duration = duration;
+        setDuration(duration);
     }
 
     public int getDuration() {
@@ -13,6 +13,9 @@ public class Dvd extends LibraryItem {
     }
 
     public void setDuration(int duration) {
+        if (duration <= 0) {
+            throw new IllegalArgumentException("Durasi harus lebih dari 0");
+        }
         this.duration = duration;
     }
 
