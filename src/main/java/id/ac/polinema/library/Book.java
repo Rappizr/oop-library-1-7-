@@ -27,9 +27,12 @@ public class Book {
      * Bagian 3: isbn tidak boleh kosong; title dan year divalidasi seperti setter-nya.
      */
     public Book(String isbn, String title, int year) {
+        if (isbn == null || isbn.trim().isEmpty()) {
+            throw new  IllegalArgumentException("ISBN tidak boleh kosong");
+        }
         this.isbn = isbn;
-        this.title = title;
-        this.year = year;
+        setTitle(title);
+        setYear(year);
         this.available = true;
         // TODO Bantuan: isi semua field. Buku baru: apakah sedang dipinjam atau tidak?
         // Bagian 3: aturan validasi judul dan tahun sama dengan setter. Bisakah constructor
@@ -62,12 +65,33 @@ public class Book {
         // throw new UnsupportedOperationException("Not implemented yet");
     }
 
+    public void setTitle(String title){
+        if (title == null || title.trim().isEmpty()) {
+            throw new IllegalArgumentException("Judul tidak boleh kosong");
+        }
+        this.title = title;
+    }
+
     public int getYear() {
         return year;
         // TODO Bantuan: sama seperti getIsbn.
         // throw new UnsupportedOperationException("Not implemented yet");
     }
-
+    
+    public void setYear(int year) {
+        if (year <=0) {
+            throw new IllegalArgumentException("Tahun harus positif");
+        }
+        this.year = year;
+        // TODO Bantuan: pola yang sama dengan setTitle. Apa syarat tahun yang valid?
+        //
+        // Kerangka:
+        //   if (year ____ 0) {
+        //       throw new IllegalArgumentException("____");
+        //   }
+        //   this.year = year;
+        // throw new UnsupportedOperationException("Not implemented yet");
+    }
     /** True jika buku sedang ada di perpustakaan (tidak dipinjam). */
     public boolean isAvailable() {
         return available;
@@ -114,30 +138,20 @@ public class Book {
      * Bagian 3. Mengubah judul. Judul null, kosong, atau hanya spasi ditolak
      * dengan IllegalArgumentException, dan judul lama tetap.
      */
-    public void setTitle(String title) {
-        // TODO Bantuan: periksa dulu, baru isi field. Class String punya method untuk
-        // memeriksa teks kosong atau hanya spasi. Jangan lupa kemungkinan null.
-        //
-        // Kerangka:
-        //   if (title == null || ____) {
-        //       throw new IllegalArgumentException("____");
-        //   }
-        //   this.title = title;
-        throw new UnsupportedOperationException("Not implemented yet");
-    }
+    // public void setTitle(String title) {
+    //     // TODO Bantuan: periksa dulu, baru isi field. Class String punya method untuk
+    //     // memeriksa teks kosong atau hanya spasi. Jangan lupa kemungkinan null.
+    //     //
+    //     // Kerangka:
+    //     //   if (title == null || ____) {
+    //     //       throw new IllegalArgumentException("____");
+    //     //   }
+    //     //   this.title = title;
+    //     throw new UnsupportedOperationException("Not implemented yet");
+    // }
 
     /**
      * Bagian 3. Mengubah tahun terbit. Tahun 0 atau negatif ditolak dengan
      * IllegalArgumentException, dan tahun lama tetap.
      */
-    public void setYear(int year) {
-        // TODO Bantuan: pola yang sama dengan setTitle. Apa syarat tahun yang valid?
-        //
-        // Kerangka:
-        //   if (year ____ 0) {
-        //       throw new IllegalArgumentException("____");
-        //   }
-        //   this.year = year;
-        throw new UnsupportedOperationException("Not implemented yet");
-    }
 }
