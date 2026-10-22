@@ -1,9 +1,9 @@
 package id.ac.polinema.library;
 
-public class Megazine extends LibraryItem{
+public class Magazine extends LibraryItem{
     private int issueNumber;
 
-    public Megazine(String title, int year, int issueNumber){
+    public Magazine(String title, int year, int issueNumber){
         super(title, year);
         this.issueNumber = issueNumber;
     }
