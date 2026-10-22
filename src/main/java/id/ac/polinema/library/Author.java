@@ -14,37 +14,44 @@ package id.ac.polinema.library;
  *   public ____ country;
  */
 public class Author {
+    private String name;
+    private String country;
 
     /** Membuat penulis dengan nama dan negara asal. */
     public Author(String name, String country) {
+        this.name = name;
+        this.country = country;
         // TODO Bantuan: nama parameter sama dengan nama field. Kata kunci apa yang
         // menunjuk ke objek yang sedang dibuat?
         //
         // Kerangka:
         //   this.name = ____;
         //   this.country = ____;
-        throw new UnsupportedOperationException("Not implemented yet");
+        // throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public String getName() {
+        return name;
         // TODO Bantuan: kembalikan data yang disimpan constructor.
         //
         // Kerangka:
         //   return ____;
-        throw new UnsupportedOperationException("Not implemented yet");
+        // throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public String getCountry() {
+        return country;
         // TODO Bantuan: sama seperti getName.
-        throw new UnsupportedOperationException("Not implemented yet");
+        // throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /** Teks berbentuk "nama (negara)". Contoh: Andrea Hirata (Indonesia). */
     public String getInfo() {
+        return name + " (" + country + ")";
         // TODO Bantuan: gabungkan dua data dengan operator + dan tanda kurung dalam String.
         //
         // Kerangka:
         //   return name + " (" + ____ + ")";
-        throw new UnsupportedOperationException("Not implemented yet");
+        // throw new UnsupportedOperationException("Not implemented yet");
     }
 }

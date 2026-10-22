@@ -17,12 +17,20 @@ package id.ac.polinema.library;
  *   public ____ available;
  */
 public class Book {
+    private String isbn;
+    private String title;
+    private int year;
+    private boolean available;
 
     /**
      * Membuat buku baru yang masih tersedia (belum dipinjam).
      * Bagian 3: isbn tidak boleh kosong; title dan year divalidasi seperti setter-nya.
      */
     public Book(String isbn, String title, int year) {
+        this.isbn = isbn;
+        this.title = title;
+        this.year = year;
+        this.available = available;
         // TODO Bantuan: isi semua field. Buku baru: apakah sedang dipinjam atau tidak?
         // Bagian 3: aturan validasi judul dan tahun sama dengan setter. Bisakah constructor
         // memakai setter-nya?
@@ -36,34 +44,38 @@ public class Book {
         // Kerangka (Bagian 3): ganti dua baris title dan year dengan pemanggilan setter.
         //   setTitle(____);
         //   setYear(____);
-        throw new UnsupportedOperationException("Not implemented yet");
+        // throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public String getIsbn() {
+        return isbn;
         // TODO Bantuan: kembalikan data yang disimpan constructor.
         //
         // Kerangka:
         //   return ____;
-        throw new UnsupportedOperationException("Not implemented yet");
+        // throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public String getTitle() {
+        return title;
         // TODO Bantuan: sama seperti getIsbn.
-        throw new UnsupportedOperationException("Not implemented yet");
+        // throw new UnsupportedOperationException("Not implemented yet");
     }
 
     public int getYear() {
+        return year;
         // TODO Bantuan: sama seperti getIsbn.
-        throw new UnsupportedOperationException("Not implemented yet");
+        // throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /** True jika buku sedang ada di perpustakaan (tidak dipinjam). */
     public boolean isAvailable() {
+        return available;
         // TODO Bantuan: field apa yang menyimpan status pinjam?
         //
         // Kerangka:
         //   return ____;
-        throw new UnsupportedOperationException("Not implemented yet");
+        // throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /**
@@ -71,6 +83,11 @@ public class Book {
      * dipinjam, hasilnya false dan keadaan buku tidak berubah.
      */
     public boolean checkOut() {
+        if (available) {
+            available = false;
+            return true;
+        }
+        return false;
         // TODO Bantuan: apa yang harus kamu periksa lebih dulu sebelum mengubah status?
         // Method ini punya dua jalur return yang berbeda.
         //
@@ -80,16 +97,17 @@ public class Book {
         //   }
         //   ____ = false;
         //   return true;
-        throw new UnsupportedOperationException("Not implemented yet");
+        // throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /** Mengembalikan buku: buku bisa dipinjam lagi. */
     public void returnItem() {
+        this.available = true;
         // TODO Bantuan: satu baris saja. Status apa yang berubah?
         //
         // Kerangka:
         //   ____ = true;
-        throw new UnsupportedOperationException("Not implemented yet");
+        // throw new UnsupportedOperationException("Not implemented yet");
     }
 
     /**
