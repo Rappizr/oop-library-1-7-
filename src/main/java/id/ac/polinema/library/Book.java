@@ -30,7 +30,7 @@ public class Book {
         this.isbn = isbn;
         this.title = title;
         this.year = year;
-        this.available = available;
+        this.available = true;
         // TODO Bantuan: isi semua field. Buku baru: apakah sedang dipinjam atau tidak?
         // Bagian 3: aturan validasi judul dan tahun sama dengan setter. Bisakah constructor
         // memakai setter-nya?
