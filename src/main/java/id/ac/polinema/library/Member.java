@@ -18,6 +18,7 @@ public class Member {
     private String memberId;
     private String name;
     private int loanCount;
+    private LibraryCard card;
 
     /**
      * Membuat anggota yang belum punya pinjaman.
@@ -31,6 +32,7 @@ public class Member {
         this.memberId = memberId;
         setName(name);
         this.loanCount = 0;
+        this.card = new LibraryCard("CARD-"+memberId);
         // TODO Bantuan: validasi dulu sebelum mengisi field. Aturan nama sama dengan setName.
         // Bagian 4: kartu anggota juga dibuat di sini (lihat diagram Bagian 4).
         //
@@ -71,6 +73,10 @@ public class Member {
         // throw new UnsupportedOperationException("Not implemented yet");
     }
 
+    public LibraryCard getCard(){
+        return card;
+    }
+    
     public int getLoanCount() {
         return loanCount;
         // TODO Bantuan: kembalikan jumlah pinjaman saat ini.

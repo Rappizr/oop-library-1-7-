@@ -21,6 +21,7 @@ public class Book {
     private String title;
     private int year;
     private boolean available;
+    private Author author;
 
     /**
      * Membuat buku baru yang masih tersedia (belum dipinjam).
@@ -91,6 +92,10 @@ public class Book {
         //   }
         //   this.year = year;
         // throw new UnsupportedOperationException("Not implemented yet");
+    }
+
+    public void setAuthor(Author author){
+        this.author = author;
     }
     /** True jika buku sedang ada di perpustakaan (tidak dipinjam). */
     public boolean isAvailable() {
