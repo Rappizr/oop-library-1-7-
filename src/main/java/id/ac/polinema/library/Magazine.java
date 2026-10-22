@@ -1,18 +1,22 @@
 package id.ac.polinema.library;
 
-public class Magazine extends LibraryItem{
+public class Magazine extends LibraryItem {
     private int issueNumber;
 
-    public Magazine(String title, int year, int issueNumber){
+    public Magazine(String title, int year, int issueNumber) {
         super(title, year);
         this.issueNumber = issueNumber;
     }
 
-    public int getIssueNumber(){
+    public Magazine(String title, int year) {
+        this(title, year, 1);
+    }
+
+    public int getIssueNumber() {
         return issueNumber;
     }
 
-    public void setIssueNumber(int issueNumber){
+    public void setIssueNumber(int issueNumber) {
         this.issueNumber = issueNumber;
     }
 }
