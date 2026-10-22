@@ -1,12 +1,18 @@
 package id.ac.polinema.library;
 
 public class Shelf {
+    private String code;
     private Book[] books;
     private int bookCount;
 
-    public Shelf(){
+    public Shelf(String code){
+        this.code = code;
         this.books = new Book[5];
         this.bookCount = 0;
+    }
+
+    public Shelf(){
+        this("A1");
     }
 
     public int getBookCount(){

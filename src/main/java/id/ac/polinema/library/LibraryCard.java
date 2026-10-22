@@ -1,14 +1,18 @@
 package id.ac.polinema.library;
 
 public class LibraryCard {
-    private String cardNumber;
+    private String number;
 
-    public LibraryCard(String cardNumber){
-        this.cardNumber = cardNumber;
+    public LibraryCard(String number){
+        this.number = number;
+    }
+
+    public String getNumber(){
+        return number;
     }
 
     public String getCardNumber(){
-        return cardNumber;
+        return number;
     }
     
 }
