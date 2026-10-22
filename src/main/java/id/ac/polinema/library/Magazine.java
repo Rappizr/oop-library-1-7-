@@ -21,5 +21,6 @@ public class Magazine extends LibraryItem {
             throw new IllegalArgumentException("Nomor edisi harus lebih dari 0");
         }
         this.issueNumber = issueNumber;
+        
     }
 }
