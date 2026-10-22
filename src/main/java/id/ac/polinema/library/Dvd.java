@@ -8,6 +8,10 @@ public class Dvd extends LibraryItem {
         setDuration(duration);
     }
 
+    public int getDurationMinutes() {
+        return duration;
+    }
+
     public int getDuration() {
         return duration;
     }
